@@ -1,6 +1,7 @@
 """集中显示智能车任务信息的 ROS 2 节点."""
 
-import rclpy
+from car_task import topics
+from car_task.runtime import run_node
 from rclpy.node import Node
 from std_msgs.msg import Int32, String
 
@@ -14,25 +15,25 @@ class DisplayNode(Node):
         self.last_state = None
         self.create_subscription(
             String,
-            '/task_state',
+            topics.TASK_STATE,
             self.state_callback,
             10
         )
         self.create_subscription(
             Int32,
-            '/motion_progress',
+            topics.MOTION_PROGRESS,
             self.progress_callback,
             10
         )
         self.create_subscription(
             String,
-            '/vision_result',
+            topics.VISION_RESULT,
             self.vision_callback,
             10
         )
         self.create_subscription(
             String,
-            '/task_report',
+            topics.TASK_REPORT,
             self.report_callback,
             10
         )
@@ -61,16 +62,7 @@ class DisplayNode(Node):
 
 def main(args=None):
     """启动集中显示节点."""
-    rclpy.init(args=args)
-    node = DisplayNode()
-
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-
-    node.destroy_node()
-    rclpy.shutdown()
+    run_node(DisplayNode, args)
 
 
 if __name__ == '__main__':

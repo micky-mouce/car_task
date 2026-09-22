@@ -1,6 +1,7 @@
 """模拟按键启动信号的 ROS 2 节点."""
 
-import rclpy
+from car_task import topics
+from car_task.runtime import run_node
 from rclpy.node import Node
 from std_msgs.msg import Bool
 
@@ -14,7 +15,7 @@ class SimulateStartNode(Node):
         # 创建发布者，向 /start_command 话题发送消息
         self.publisher = self.create_publisher(
             Bool,
-            '/start_command',
+            topics.START_COMMAND,
             10
         )
 
@@ -37,16 +38,7 @@ class SimulateStartNode(Node):
 
 def main(args=None):
     """启动模拟按键节点."""
-    rclpy.init(args=args)
-    node = SimulateStartNode()
-
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-
-    node.destroy_node()
-    rclpy.shutdown()
+    run_node(SimulateStartNode, args)
 
 
 if __name__ == '__main__':

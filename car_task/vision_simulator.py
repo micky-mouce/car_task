@@ -1,6 +1,8 @@
 """模拟象棋棋子视觉识别的 ROS 2 节点."""
 
-import rclpy
+from car_task import topics
+from car_task.runtime import run_node
+from car_task.task_model import TaskEvent, TaskState
 from rclpy.node import Node
 from std_msgs.msg import String
 
@@ -17,17 +19,17 @@ class VisionSimulatorNode(Node):
 
         self.result_publisher = self.create_publisher(
             String,
-            '/vision_result',
+            topics.VISION_RESULT,
             10
         )
         self.event_publisher = self.create_publisher(
             String,
-            '/task_event',
+            topics.TASK_EVENT,
             10
         )
         self.create_subscription(
             String,
-            '/task_state',
+            topics.TASK_STATE,
             self.state_callback,
             10
         )
@@ -36,7 +38,7 @@ class VisionSimulatorNode(Node):
 
     def state_callback(self, message):
         """在状态机进入 SCANNING 时启动一次识别."""
-        if message.data != 'SCANNING':
+        if message.data != TaskState.SCANNING.value:
             return
         if self.scanning or self.completed:
             return
@@ -62,22 +64,13 @@ class VisionSimulatorNode(Node):
         self.get_logger().info(f'识别完成：{result.data}')
 
         event = String()
-        event.data = 'scan_done'
+        event.data = TaskEvent.SCAN_DONE.value
         self.event_publisher.publish(event)
 
 
 def main(args=None):
     """启动视觉模拟节点."""
-    rclpy.init(args=args)
-    node = VisionSimulatorNode()
-
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-
-    node.destroy_node()
-    rclpy.shutdown()
+    run_node(VisionSimulatorNode, args)
 
 
 if __name__ == '__main__':

@@ -1,6 +1,8 @@
 """模拟智能车行驶过程的 ROS 2 节点."""
 
-import rclpy
+from car_task import topics
+from car_task.runtime import run_node
+from car_task.task_model import TaskEvent, TaskState
 from rclpy.node import Node
 from std_msgs.msg import Int32, String
 
@@ -18,17 +20,17 @@ class MotionSimulatorNode(Node):
 
         self.progress_publisher = self.create_publisher(
             Int32,
-            '/motion_progress',
+            topics.MOTION_PROGRESS,
             10
         )
         self.event_publisher = self.create_publisher(
             String,
-            '/task_event',
+            topics.TASK_EVENT,
             10
         )
         self.create_subscription(
             String,
-            '/task_state',
+            topics.TASK_STATE,
             self.state_callback,
             10
         )
@@ -37,7 +39,7 @@ class MotionSimulatorNode(Node):
 
     def state_callback(self, message):
         """在状态机进入 RUNNING 时开始模拟行驶."""
-        if message.data != 'RUNNING':
+        if message.data != TaskState.RUNNING.value:
             return
         if self.moving or self.completed:
             return
@@ -62,7 +64,7 @@ class MotionSimulatorNode(Node):
             self.motion_timer.cancel()
 
         event = String()
-        event.data = 'arrived'
+        event.data = TaskEvent.ARRIVED.value
         self.event_publisher.publish(event)
         self.get_logger().info('小车已到达棋子区域')
 
@@ -75,16 +77,7 @@ class MotionSimulatorNode(Node):
 
 def main(args=None):
     """启动运动模拟节点."""
-    rclpy.init(args=args)
-    node = MotionSimulatorNode()
-
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-
-    node.destroy_node()
-    rclpy.shutdown()
+    run_node(MotionSimulatorNode, args)
 
 
 if __name__ == '__main__':

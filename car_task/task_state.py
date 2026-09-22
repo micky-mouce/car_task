@@ -1,6 +1,9 @@
 """管理智能车任务流程的状态机节点."""
 
-import rclpy
+from car_task import topics
+from car_task.runtime import run_node
+from car_task.task_model import InvalidTransitionError
+from car_task.task_model import TaskEvent, TaskState, TaskStateMachine
 from rclpy.node import Node
 from std_msgs.msg import Bool, String
 
@@ -11,37 +14,36 @@ class TaskStateNode(Node):
     def __init__(self):
         super().__init__('task_state_node')
 
-        self.state = 'IDLE'
-        self.vision_result = '暂无识别结果'
-        self.report_timer = None
+        self.state_machine = TaskStateMachine()
+        self.vision_result = None
 
         self.state_publisher = self.create_publisher(
             String,
-            '/task_state',
+            topics.TASK_STATE,
             10
         )
         self.report_publisher = self.create_publisher(
             String,
-            '/task_report',
+            topics.TASK_REPORT,
             10
         )
 
         self.create_subscription(
             Bool,
-            '/start_command',
+            topics.START_COMMAND,
             self.start_callback,
             10
         )
 
         self.create_subscription(
             String,
-            '/task_event',
+            topics.TASK_EVENT,
             self.event_callback,
             10
         )
         self.create_subscription(
             String,
-            '/vision_result',
+            topics.VISION_RESULT,
             self.vision_result_callback,
             10
         )
@@ -52,81 +54,81 @@ class TaskStateNode(Node):
 
     def start_callback(self, message):
         """在空闲状态接收一次启动指令."""
-        if message.data is True and self.state == 'IDLE':
-            self.change_state('RUNNING')
-        elif message.data is True:
-            self.get_logger().warning('当前状态不能执行启动操作')
+        if message.data is not True:
+            return
+
+        self.handle_event(TaskEvent.START)
 
     def event_callback(self, message):
         """根据当前状态处理任务事件."""
-        event = message.data.strip().lower()
-
-        transitions = {
-            ('RUNNING', 'arrived'): 'SCANNING',
-            ('SCANNING', 'scan_done'): 'REPORTING',
-        }
-
-        next_state = transitions.get((self.state, event))
-
-        if next_state is None:
+        try:
+            event = TaskEvent(message.data.strip().lower())
+        except ValueError:
             self.get_logger().warning(
-                f'无效操作：当前状态={self.state}，收到事件={event}'
+                f'收到未知任务事件：{message.data}'
             )
             return
 
-        self.change_state(next_state)
-
-        if next_state == 'REPORTING':
-            self.report_timer = self.create_timer(
-                1.5,
-                self.finish_report
+        if event not in (TaskEvent.ARRIVED, TaskEvent.SCAN_DONE):
+            self.get_logger().warning(
+                f'话题不接收内部任务事件：{event.value}'
             )
+            return
+
+        self.handle_event(event)
 
     def vision_result_callback(self, message):
         """保存最新的视觉识别结果."""
-        self.vision_result = message.data
+        if self.state_machine.state not in (
+                TaskState.SCANNING, TaskState.REPORTING):
+            self.get_logger().warning('当前状态不接收视觉结果')
+            return
 
-    def finish_report(self):
-        """发布任务报告并进入安全停车状态."""
-        if self.report_timer is not None:
-            self.report_timer.cancel()
+        self.vision_result = message.data
+        self.try_finish_report()
+
+    def handle_event(self, event):
+        """将事件交给独立状态机处理."""
+        old_state = self.state_machine.state
+        try:
+            new_state = self.state_machine.transition(event)
+        except InvalidTransitionError as error:
+            self.get_logger().warning(str(error))
+            return
+
+        self.get_logger().info(
+            f'状态变化：{old_state.value} -> {new_state.value}'
+        )
+        self.publish_state()
+
+        if new_state is TaskState.RUNNING:
+            self.vision_result = None
+        elif new_state is TaskState.REPORTING:
+            self.try_finish_report()
+
+    def try_finish_report(self):
+        """扫描完成且已获得结果时发布报告."""
+        if self.state_machine.state is not TaskState.REPORTING:
+            return
+        if self.vision_result is None:
+            return
 
         message = String()
         message.data = f'任务完成；{self.vision_result}'
         self.report_publisher.publish(message)
         self.get_logger().info(f'已发布任务报告：{message.data}')
-        self.change_state('SAFE_STOP')
-
-    def change_state(self, new_state):
-        """更新并立即发布任务状态."""
-        old_state = self.state
-        self.state = new_state
-
-        self.get_logger().info(
-            f'状态变化：{old_state} -> {new_state}'
-        )
-
-        self.publish_state()
+        self.handle_event(TaskEvent.REPORT_DONE)
 
     def publish_state(self):
         """发布当前任务状态."""
         message = String()
-        message.data = self.state
+        message.data = self.state_machine.state.value
         self.state_publisher.publish(message)
 
 
 def main(args=None):
     """启动任务状态节点."""
-    rclpy.init(args=args)
-    node = TaskStateNode()
-
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-
-    node.destroy_node()
-    rclpy.shutdown()
+    run_node(TaskStateNode, args)
 
 
 if __name__ == '__main__':

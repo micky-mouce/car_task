@@ -7,7 +7,7 @@ package_name = 'car_task'
 
 setup(
     name=package_name,
-    version='0.0.0',
+    version='0.1.0',
     packages=find_packages(exclude=['test']),
     data_files=[
         (
@@ -25,9 +25,12 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='micky',
-    maintainer_email='micky@example.com',
-    description='ROS2 task state machine',
+    maintainer='Micky_Mouce',
+    maintainer_email='hellsee005@gmail.com',
+    description=(
+        'ROS 2 intelligent car task flow, motion, and vision '
+        'collaboration simulator'
+    ),
     license='Apache-2.0',
     entry_points={
         'console_scripts': [
