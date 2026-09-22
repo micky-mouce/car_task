@@ -1,3 +1,6 @@
+from glob import glob
+import os
+
 from setuptools import find_packages, setup
 
 package_name = 'car_task'
@@ -15,6 +18,10 @@ setup(
             'share/' + package_name,
             ['package.xml']
         ),
+        (
+            os.path.join('share', package_name, 'launch'),
+            glob('launch/*.launch.py')
+        ),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -26,7 +33,9 @@ setup(
         'console_scripts': [
             'simulate_start = car_task.simulate_start:main',
             'task_state = car_task.task_state:main',
+            'motion_simulator = car_task.motion_simulator:main',
+            'vision_simulator = car_task.vision_simulator:main',
+            'display_node = car_task.display_node:main',
         ],
     },
 )
-

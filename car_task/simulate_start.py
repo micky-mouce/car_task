@@ -1,9 +1,12 @@
+"""模拟按键启动信号的 ROS 2 节点."""
+
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Bool
 
 
 class SimulateStartNode(Node):
+    """节点启动两秒后发布一次启动指令."""
 
     def __init__(self):
         super().__init__('simulate_start_node')
@@ -21,6 +24,7 @@ class SimulateStartNode(Node):
         self.get_logger().info('模拟启动节点已运行，2秒后启动小车')
 
     def send_start(self):
+        """发布一次真值指令并停止定时器."""
         message = Bool()
         message.data = True
 
@@ -32,6 +36,7 @@ class SimulateStartNode(Node):
 
 
 def main(args=None):
+    """启动模拟按键节点."""
     rclpy.init(args=args)
     node = SimulateStartNode()
 
