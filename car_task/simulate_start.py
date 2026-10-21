@@ -26,6 +26,9 @@ class SimulateStartNode(Node):
 
     def send_start(self):
         """发布一次真值指令并停止定时器."""
+        if self.publisher.get_subscription_count() == 0:
+            self.get_logger().info('等待任务控制节点连接')
+            return
         message = Bool()
         message.data = True
 

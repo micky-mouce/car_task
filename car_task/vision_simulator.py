@@ -1,6 +1,9 @@
 """模拟象棋棋子视觉识别的 ROS 2 节点."""
 
+import json
+
 from car_task import topics
+from car_task.recognition_model import recognize
 from car_task.runtime import run_node
 from car_task.task_model import TaskEvent, TaskState
 from rclpy.node import Node
@@ -13,6 +16,8 @@ class VisionSimulatorNode(Node):
     def __init__(self):
         super().__init__('vision_simulator_node')
 
+        self.team = self.declare_parameter('team', 'red').value
+        recognize(self.team)
         self.scanning = False
         self.completed = False
         self.scan_timer = None
@@ -55,11 +60,7 @@ class VisionSimulatorNode(Node):
             self.scan_timer.cancel()
 
         result = String()
-        result.data = (
-            '红方3枚（车、马、兵），'
-            '绿方2枚（炮、卒），'
-            '推荐目标：红车'
-        )
+        result.data = json.dumps(recognize(self.team), ensure_ascii=False)
         self.result_publisher.publish(result)
         self.get_logger().info(f'识别完成：{result.data}')
 
