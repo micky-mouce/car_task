@@ -8,8 +8,8 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from car_task.recognition_model import recognize
-from car_task.task_model import (
+from car_task.recognition_model import recognize  # noqa: E402
+from car_task.task_model import (  # noqa: E402
     InvalidTransitionError, TaskEvent, TaskState, TaskStateMachine,
 )
 

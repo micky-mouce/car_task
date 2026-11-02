@@ -1,0 +1,25 @@
+[INFO] [launch]: All log files can be found below /home/micky/.ros/log/2026-11-02-18-28-58-703375-micky-Yilong15Pro-Series-GM5HG0A-25563
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [target_input-1]: process started with pid [25566]
+[INFO] [target_manager-2]: process started with pid [25567]
+[INFO] [target_executor-3]: process started with pid [25568]
+[INFO] [target_display-4]: process started with pid [25569]
+[target_executor-3] [INFO] [1793615339.015756319] [target_executor]: 执行节点就绪，模拟移动及抓取，不连接真实硬件
+[target_manager-2] [INFO] [1793615339.015773341] [target_manager]: 等待输入和启动；分值优先，同分按编号；一次执行一个
+[target_input-1] [INFO] [1793615339.022336433] [target_input]: 输入 4 个目标：['T3', 'T2', 'T4', 'T1']（模拟数据）
+[target_manager-2] [INFO] [1793615339.107050417] [target_manager]: 下发 T1，第 1 次执行
+[target_display-4] [INFO] [1793615339.107662822] [target_display]: [IDLE] 当前=无 待执行=['T1(9分)', 'T4(6分)', 'T2(5分)', 'T3(1分)'] 成功=[] 跳过=[]；等待目标输入和启动指令
+[target_display-4] [INFO] [1793615339.108121061] [target_display]: [RUNNING] 当前=T1 (第1次) 待执行=['T4(6分)', 'T2(5分)', 'T3(1分)'] 成功=[] 跳过=[]；按分值降序执行；失败有限重试
+[target_manager-2] [WARN] [1793615340.406953328] [target_manager]: 反馈超时：取消当前执行并停止整轮，防止执行状态不明时继续
+[target_manager-2] [INFO] [1793615340.407424632] [target_manager]: 本轮结束，已发布最终报告；重新演示请重启 launch
+[target_display-4] [INFO] [1793615340.408241449] [target_display]: [STOPPED] 当前=无 待执行=['T4(6分)', 'T2(5分)', 'T3(1分)'] 成功=[] 跳过=[]；反馈超时：取消当前执行并停止整轮，防止执行状态不明时继续
+[target_display-4] [INFO] [1793615340.408605277] [target_display]: [最终报告] {"state": "STOPPED", "loaded": true, "rule": "score_desc_id_asc", "current": null, "pending": [{"id": "T4", "category": "炮", "score": 6, "x": 0.8, "y": 1.1}, {"id": "T2", "category": "马", "score": 5, "x": 1.2, "y": 0.7}, {"id": "T3", "category": "兵", "score": 1, "x": 0.5, "y": 0.8}], "completed": [], "failed": [], "cancelled": [{"id": "T1", "category": "车", "score": 9, "x": 1.6, "y": 0.3}], "history": [{"target_id": "T1", "command_id": "a139d772d24b4a31ae1500df318635db:T1:1", "attempt": 1, "status": "cancelled", "detail": "反馈超时：取消当前执行并停止整轮，防止执行状态不明时继续"}], "reason": "反馈超时：取消当前执行并停止整轮，防止执行状态不明时继续"}
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [target_display-4]: sending signal 'SIGINT' to process[target_display-4]
+[INFO] [target_executor-3]: sending signal 'SIGINT' to process[target_executor-3]
+[INFO] [target_manager-2]: sending signal 'SIGINT' to process[target_manager-2]
+[INFO] [target_input-1]: sending signal 'SIGINT' to process[target_input-1]
+[INFO] [target_display-4]: process has finished cleanly [pid 25569]
+[INFO] [target_manager-2]: process has finished cleanly [pid 25567]
+[INFO] [target_input-1]: process has finished cleanly [pid 25566]
+[INFO] [target_executor-3]: process has finished cleanly [pid 25568]

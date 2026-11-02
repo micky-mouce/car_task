@@ -1,0 +1,133 @@
+[INFO] [launch]: All log files can be found below /home/micky/.ros/log/2026-11-02-18-28-22-961789-micky-Yilong15Pro-Series-GM5HG0A-25011
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [target_input-1]: process started with pid [25014]
+[INFO] [target_manager-2]: process started with pid [25015]
+[INFO] [target_executor-3]: process started with pid [25016]
+[INFO] [target_display-4]: process started with pid [25017]
+[target_manager-2] [INFO] [1793615303.278221842] [target_manager]: 等待输入和启动；分值优先，同分按编号；一次执行一个
+[target_executor-3] [INFO] [1793615303.278694466] [target_executor]: 执行节点就绪，模拟移动及抓取，不连接真实硬件
+[target_input-1] [INFO] [1793615303.278781302] [target_input]: 输入 4 个目标：['T3', 'T2', 'T4', 'T1']（模拟数据）
+[target_display-4] [INFO] [1793615303.360842945] [target_display]: [IDLE] 当前=无 待执行=['T1(9分)', 'T4(6分)', 'T2(5分)', 'T3(1分)'] 成功=[] 跳过=[]；等待目标输入和启动指令
+[target_manager-2] [INFO] [1793615303.368705266] [target_manager]: 下发 T1，第 1 次执行
+[target_display-4] [INFO] [1793615303.368787273] [target_display]: [RUNNING] 当前=无 待执行=['T1(9分)', 'T4(6分)', 'T2(5分)', 'T3(1分)'] 成功=[] 跳过=[]；按分值降序执行；失败有限重试
+[target_display-4] [INFO] [1793615303.369176358] [target_display]: [RUNNING] 当前=T1 (第1次) 待执行=['T4(6分)', 'T2(5分)', 'T3(1分)'] 成功=[] 跳过=[]；按分值降序执行；失败有限重试
+[target_executor-3] [INFO] [1793615303.369333368] [target_executor]: 开始 T1，第 1 次执行
+[target_display-4] [INFO] [1793615303.369970978] [target_display]: T1 移动 0%
+[target_display-4] [INFO] [1793615303.970802303] [target_display]: T1 移动 20%
+[target_display-4] [INFO] [1793615304.570455662] [target_display]: T1 移动 40%
+[target_display-4] [INFO] [1793615305.170425841] [target_display]: T1 移动 60%
+[target_display-4] [INFO] [1793615305.770683964] [target_display]: T1 抓取 80%
+[target_manager-2] [INFO] [1793615306.370567353] [target_manager]: T1 成功，移除已完成目标
+[target_display-4] [INFO] [1793615306.370760122] [target_display]: T1 抓取 100%
+[target_display-4] [INFO] [1793615306.371551737] [target_display]: [RUNNING] 当前=无 待执行=['T4(6分)', 'T2(5分)', 'T3(1分)'] 成功=['T1'] 跳过=[]；T1 成功，移除已完成目标
+[target_manager-2] [INFO] [1793615306.470046558] [target_manager]: 下发 T4，第 1 次执行
+[target_executor-3] [INFO] [1793615306.470906885] [target_executor]: 开始 T4，第 1 次执行
+[target_display-4] [INFO] [1793615306.471457358] [target_display]: [RUNNING] 当前=T4 (第1次) 待执行=['T2(5分)', 'T3(1分)'] 成功=['T1'] 跳过=[]；T1 成功，移除已完成目标
+[target_display-4] [INFO] [1793615306.570994264] [target_display]: T4 移动 0%
+[target_display-4] [INFO] [1793615307.171006747] [target_display]: T4 移动 20%
+[target_display-4] [INFO] [1793615307.770912718] [target_display]: T4 移动 40%
+[target_display-4] [INFO] [1793615308.370502214] [target_display]: T4 移动 60%
+[target_display-4] [INFO] [1793615308.971213957] [target_display]: T4 抓取 80%
+[target_manager-2] [INFO] [1793615309.570971347] [target_manager]: T4 成功，移除已完成目标
+[target_display-4] [INFO] [1793615309.571214322] [target_display]: T4 抓取 100%
+[target_display-4] [INFO] [1793615309.571941584] [target_display]: [RUNNING] 当前=无 待执行=['T2(5分)', 'T3(1分)'] 成功=['T1', 'T4'] 跳过=[]；T4 成功，移除已完成目标
+[target_manager-2] [INFO] [1793615309.669199948] [target_manager]: 下发 T2，第 1 次执行
+[target_executor-3] [INFO] [1793615309.669931799] [target_executor]: 开始 T2，第 1 次执行
+[target_display-4] [INFO] [1793615309.670153373] [target_display]: [RUNNING] 当前=T2 (第1次) 待执行=['T3(1分)'] 成功=['T1', 'T4'] 跳过=[]；T4 成功，移除已完成目标
+[target_display-4] [INFO] [1793615309.670746589] [target_display]: T2 移动 0%
+[target_display-4] [INFO] [1793615310.271164162] [target_display]: T2 移动 20%
+[target_display-4] [INFO] [1793615310.870118247] [target_display]: T2 移动 40%
+[target_display-4] [INFO] [1793615311.470394499] [target_display]: T2 移动 60%
+[target_display-4] [INFO] [1793615312.070245821] [target_display]: T2 抓取 80%
+[target_manager-2] [INFO] [1793615312.670087249] [target_manager]: T2 失败，准备第 1 次重试
+[target_display-4] [INFO] [1793615312.670450154] [target_display]: T2 抓取 100%
+[target_display-4] [INFO] [1793615312.671032499] [target_display]: [RUNNING] 当前=无 待执行=['T2(5分)', 'T3(1分)'] 成功=['T1', 'T4'] 跳过=[]；T2 失败，准备第 1 次重试
+[target_manager-2] [INFO] [1793615312.769250447] [target_manager]: 下发 T2，第 2 次执行
+[target_executor-3] [INFO] [1793615312.769590509] [target_executor]: 开始 T2，第 2 次执行
+[target_display-4] [INFO] [1793615312.770551528] [target_display]: [RUNNING] 当前=T2 (第2次) 待执行=['T3(1分)'] 成功=['T1', 'T4'] 跳过=[]；T2 失败，准备第 1 次重试
+[target_display-4] [INFO] [1793615312.771266387] [target_display]: T2 移动 0%
+[target_display-4] [INFO] [1793615313.370059266] [target_display]: T2 移动 20%
+[target_display-4] [INFO] [1793615313.971394019] [target_display]: T2 移动 40%
+[target_display-4] [INFO] [1793615314.570980575] [target_display]: T2 移动 60%
+[target_display-4] [INFO] [1793615315.170305722] [target_display]: T2 抓取 80%
+[target_display-4] [INFO] [1793615315.770976203] [target_display]: T2 抓取 100%
+[target_manager-2] [INFO] [1793615315.771045856] [target_manager]: T2 成功，移除已完成目标
+[target_display-4] [INFO] [1793615315.771880986] [target_display]: [RUNNING] 当前=无 待执行=['T3(1分)'] 成功=['T1', 'T4', 'T2'] 跳过=[]；T2 成功，移除已完成目标
+[target_manager-2] [INFO] [1793615315.869168649] [target_manager]: 下发 T3，第 1 次执行
+[target_executor-3] [INFO] [1793615315.870019689] [target_executor]: 开始 T3，第 1 次执行
+[target_display-4] [INFO] [1793615315.870805384] [target_display]: [RUNNING] 当前=T3 (第1次) 待执行=[] 成功=['T1', 'T4', 'T2'] 跳过=[]；T2 成功，移除已完成目标
+[target_display-4] [INFO] [1793615315.871495696] [target_display]: T3 移动 0%
+[target_display-4] [INFO] [1793615316.470822096] [target_display]: T3 移动 20%
+[target_display-4] [INFO] [1793615317.170963867] [target_display]: T3 移动 40%
+[target_display-4] [INFO] [1793615317.770426000] [target_display]: T3 移动 60%
+[target_display-4] [INFO] [1793615318.370827890] [target_display]: T3 抓取 80%
+[target_manager-2] [INFO] [1793615318.970183331] [target_manager]: T3 成功，移除已完成目标；队列处理结束，进入等待
+[target_manager-2] [INFO] [1793615318.970634776] [target_manager]: 本轮结束，已发布最终报告；重新演示请重启 launch
+[target_display-4] [INFO] [1793615318.970927446] [target_display]: T3 抓取 100%
+[target_display-4] [INFO] [1793615318.971659208] [target_display]: [COMPLETED] 当前=无 待执行=[] 成功=['T1', 'T4', 'T2', 'T3'] 跳过=[]；T3 成功，移除已完成目标；队列处理结束，进入等待
+[target_display-4] [INFO] [1793615318.972000121] [target_display]: [最终报告] {"state": "COMPLETED", "loaded": true, "rule": "score_desc_id_asc", "current": null, "pending": [], "completed": [{"id": "T1", "category": "车", "score": 9, "x": 1.6, "y": 0.3}, {"id": "T4", "category": "炮", "score": 6, "x": 0.8, "y": 1.1}, {"id": "T2", "category": "马", "score": 5, "x": 1.2, "y": 0.7}, {"id": "T3", "category": "兵", "score": 1, "x": 0.5, "y": 0.8}], "failed": [], "cancelled": [], "history": [{"target_id": "T1", "command_id": "b9136d9d63d5489a892ff30b8b505aa6:T1:1", "attempt": 1, "status": "success", "detail": "模拟移动和抓取成功"}, {"target_id": "T4", "command_id": "b9136d9d63d5489a892ff30b8b505aa6:T4:1", "attempt": 1, "status": "success", "detail": "模拟移动和抓取成功"}, {"target_id": "T2", "command_id": "b9136d9d63d5489a892ff30b8b505aa6:T2:1", "attempt": 1, "status": "failure", "detail": "模拟抓取失败"}, {"target_id": "T2", "command_id": "b9136d9d63d5489a892ff30b8b505aa6:T2:2", "attempt": 2, "status": "success", "detail": "模拟移动和抓取成功"}, {"target_id": "T3", "command_id": "b9136d9d63d5489a892ff30b8b505aa6:T3:1", "attempt": 1, "status": "success", "detail": "模拟移动和抓取成功"}], "reason": "T3 成功，移除已完成目标；队列处理结束，进入等待"}
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [target_display-4]: sending signal 'SIGINT' to process[target_display-4]
+[INFO] [target_executor-3]: sending signal 'SIGINT' to process[target_executor-3]
+[INFO] [target_manager-2]: sending signal 'SIGINT' to process[target_manager-2]
+[INFO] [target_input-1]: sending signal 'SIGINT' to process[target_input-1]
+[target_display-4] Traceback (most recent call last):
+[target_display-4]   File "/home/micky/下载/ros2_ws/install/car_task/lib/car_task/target_display", line 33, in <module>
+[target_display-4]     sys.exit(load_entry_point('car-task==0.1.0', 'console_scripts', 'target_display')())
+[target_display-4]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[target_display-4]   File "/home/micky/下载/ros2_ws/install/car_task/lib/python3.12/site-packages/car_task/target_display.py", line 53, in main
+[target_display-4]     run_node(TargetDisplayNode, args)
+[target_display-4]   File "/home/micky/下载/ros2_ws/install/car_task/lib/python3.12/site-packages/car_task/runtime.py", line 18, in run_node
+[target_display-4]     node.destroy_node()
+[target_display-4]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/node.py", line 1962, in destroy_node
+[target_display-4]     self.destroy_service(self._services[0])
+[target_display-4]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/node.py", line 1886, in destroy_service
+[target_executor-3] Traceback (most recent call last):
+[target_executor-3]   File "/home/micky/下载/ros2_ws/install/car_task/lib/car_task/target_executor", line 33, in <module>
+[target_executor-3]     sys.exit(load_entry_point('car-task==0.1.0', 'console_scripts', 'target_executor')())
+[target_executor-3]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[target_executor-3]   File "/home/micky/下载/ros2_ws/install/car_task/lib/python3.12/site-packages/car_task/target_executor.py", line 114, in main
+[target_executor-3]     run_node(TargetExecutorNode, args)
+[target_executor-3]   File "/home/micky/下载/ros2_ws/install/car_task/lib/python3.12/site-packages/car_task/runtime.py", line 18, in run_node
+[target_executor-3]     node.destroy_node()
+[target_executor-3]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/node.py", line 1962, in destroy_node
+[target_display-4]     service.destroy()
+[target_display-4]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/service.py", line 123, in destroy
+[target_display-4]     self.__service.destroy_when_not_in_use()
+[target_display-4] KeyboardInterrupt
+[target_manager-2] Traceback (most recent call last):
+[target_manager-2]   File "/home/micky/下载/ros2_ws/install/car_task/lib/car_task/target_manager", line 33, in <module>
+[target_manager-2]     sys.exit(load_entry_point('car-task==0.1.0', 'console_scripts', 'target_manager')())
+[target_manager-2]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[target_manager-2]   File "/home/micky/下载/ros2_ws/install/car_task/lib/python3.12/site-packages/car_task/target_manager.py", line 127, in main
+[target_manager-2]     run_node(TargetManagerNode, args)
+[target_manager-2]   File "/home/micky/下载/ros2_ws/install/car_task/lib/python3.12/site-packages/car_task/runtime.py", line 18, in run_node
+[target_manager-2]     node.destroy_node()
+[target_manager-2]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/node.py", line 1962, in destroy_node
+[target_executor-3]     self.destroy_service(self._services[0])
+[target_executor-3]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/node.py", line 1886, in destroy_service
+[target_executor-3]     service.destroy()
+[target_executor-3]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/service.py", line 123, in destroy
+[target_manager-2]     self.destroy_service(self._services[0])
+[target_manager-2]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/node.py", line 1886, in destroy_service
+[target_executor-3]     self.__service.destroy_when_not_in_use()
+[target_executor-3] KeyboardInterrupt
+[target_manager-2]     service.destroy()
+[target_manager-2]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/service.py", line 123, in destroy
+[target_manager-2]     self.__service.destroy_when_not_in_use()
+[target_manager-2] KeyboardInterrupt
+[target_input-1] Traceback (most recent call last):
+[target_input-1]   File "/home/micky/下载/ros2_ws/install/car_task/lib/car_task/target_input", line 33, in <module>
+[target_input-1]     sys.exit(load_entry_point('car-task==0.1.0', 'console_scripts', 'target_input')())
+[target_input-1]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[target_input-1]   File "/home/micky/下载/ros2_ws/install/car_task/lib/python3.12/site-packages/car_task/target_input.py", line 30, in main
+[target_input-1]     run_node(TargetInputNode, args)
+[target_input-1]   File "/home/micky/下载/ros2_ws/install/car_task/lib/python3.12/site-packages/car_task/runtime.py", line 18, in run_node
+[target_input-1]     node.destroy_node()
+[target_input-1]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/node.py", line 1968, in destroy_node
+[target_input-1]     self.__node.destroy_when_not_in_use()
+[target_input-1] KeyboardInterrupt
+[ERROR] [target_manager-2]: process has died [pid 25015, exit code -2, cmd '/home/micky/下载/ros2_ws/install/car_task/lib/car_task/target_manager --ros-args --params-file /tmp/launch_params_d3nmphd_'].
+[ERROR] [target_executor-3]: process has died [pid 25016, exit code -2, cmd '/home/micky/下载/ros2_ws/install/car_task/lib/car_task/target_executor --ros-args --params-file /tmp/launch_params_l6ynrlk2'].
+[ERROR] [target_input-1]: process has died [pid 25014, exit code -2, cmd '/home/micky/下载/ros2_ws/install/car_task/lib/car_task/target_input --ros-args --params-file /tmp/launch_params_9577i41k'].
+[ERROR] [target_display-4]: process has died [pid 25017, exit code -2, cmd '/home/micky/下载/ros2_ws/install/car_task/lib/car_task/target_display --ros-args'].

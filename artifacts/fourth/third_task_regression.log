@@ -1,0 +1,41 @@
+[INFO] [launch]: All log files can be found below /home/micky/.ros/log/2026-11-02-18-26-44-574778-micky-Yilong15Pro-Series-GM5HG0A-24112
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [task_state-1]: process started with pid [24126]
+[INFO] [motion_simulator-2]: process started with pid [24127]
+[INFO] [vision_simulator-3]: process started with pid [24128]
+[INFO] [display_node-4]: process started with pid [24129]
+[task_state-1] [INFO] [1793615205.006348519] [task_state]: 状态节点已启动，当前状态：IDLE
+[display_node-4] [INFO] [1793615205.006366743] [display_node]: 显示节点已启动
+[motion_simulator-2] [INFO] [1793615205.010086515] [motion_simulator]: 运动模拟节点已启动，等待 RUNNING 状态
+[vision_simulator-3] [INFO] [1793615205.010300860] [vision_simulator]: 视觉模拟节点已启动，等待 SCANNING 状态
+[display_node-4] [INFO] [1793615205.988894851] [display_node]: [任务状态] IDLE
+[task_state-1] [INFO] [1793615205.989064802] [task_state]: 状态变化：IDLE -> RUNNING
+[display_node-4] [INFO] [1793615205.989729828] [display_node]: [任务状态] RUNNING
+[motion_simulator-2] [INFO] [1793615205.989881594] [motion_simulator]: 小车开始向棋子区域行驶
+[display_node-4] [INFO] [1793615205.990337394] [display_node]: [行驶进度] 0%
+[display_node-4] [INFO] [1793615206.990641014] [display_node]: [行驶进度] 20%
+[display_node-4] [INFO] [1793615207.990611151] [display_node]: [行驶进度] 40%
+[display_node-4] [INFO] [1793615208.990465472] [display_node]: [行驶进度] 60%
+[display_node-4] [INFO] [1793615209.990657444] [display_node]: [行驶进度] 80%
+[task_state-1] [INFO] [1793615210.990897213] [task_state]: 状态变化：RUNNING -> SCANNING
+[motion_simulator-2] [INFO] [1793615210.991063948] [motion_simulator]: 小车已到达棋子区域
+[display_node-4] [INFO] [1793615210.991352764] [display_node]: [行驶进度] 100%
+[vision_simulator-3] [INFO] [1793615210.991971152] [vision_simulator]: 正在识别棋子颜色和类型……
+[display_node-4] [INFO] [1793615210.992196438] [display_node]: [任务状态] SCANNING
+[vision_simulator-3] [INFO] [1793615212.992808613] [vision_simulator]: 识别完成：{"simulated": true, "team": "red", "pieces": [{"id": 1, "color": "red", "category": "车", "score": 9}, {"id": 2, "color": "red", "category": "马", "score": 5}, {"id": 3, "color": "red", "category": "兵", "score": 1}, {"id": 4, "color": "green", "category": "炮", "score": 6}, {"id": 5, "color": "green", "category": "卒", "score": 1}], "grab_queue": [{"id": 1, "color": "red", "category": "车", "score": 9, "priority": 1}, {"id": 2, "color": "red", "category": "马", "score": 5, "priority": 2}, {"id": 3, "color": "red", "category": "兵", "score": 1, "priority": 3}]}
+[display_node-4] [INFO] [1793615212.993087019] [display_node]: [视觉结果] {"simulated": true, "team": "red", "pieces": [{"id": 1, "color": "red", "category": "车", "score": 9}, {"id": 2, "color": "red", "category": "马", "score": 5}, {"id": 3, "color": "red", "category": "兵", "score": 1}, {"id": 4, "color": "green", "category": "炮", "score": 6}, {"id": 5, "color": "green", "category": "卒", "score": 1}], "grab_queue": [{"id": 1, "color": "red", "category": "车", "score": 9, "priority": 1}, {"id": 2, "color": "red", "category": "马", "score": 5, "priority": 2}, {"id": 3, "color": "red", "category": "兵", "score": 1, "priority": 3}]}
+[task_state-1] [INFO] [1793615212.993525378] [task_state]: 状态变化：SCANNING -> REPORTING
+[task_state-1] [INFO] [1793615212.993925224] [task_state]: 已发布任务报告：任务完成；{"simulated": true, "team": "red", "pieces": [{"id": 1, "color": "red", "category": "车", "score": 9}, {"id": 2, "color": "red", "category": "马", "score": 5}, {"id": 3, "color": "red", "category": "兵", "score": 1}, {"id": 4, "color": "green", "category": "炮", "score": 6}, {"id": 5, "color": "green", "category": "卒", "score": 1}], "grab_queue": [{"id": 1, "color": "red", "category": "车", "score": 9, "priority": 1}, {"id": 2, "color": "red", "category": "马", "score": 5, "priority": 2}, {"id": 3, "color": "red", "category": "兵", "score": 1, "priority": 3}]}
+[display_node-4] [INFO] [1793615212.994130502] [display_node]: [任务状态] REPORTING
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [display_node-4]: sending signal 'SIGINT' to process[display_node-4]
+[INFO] [vision_simulator-3]: sending signal 'SIGINT' to process[vision_simulator-3]
+[INFO] [motion_simulator-2]: sending signal 'SIGINT' to process[motion_simulator-2]
+[INFO] [task_state-1]: sending signal 'SIGINT' to process[task_state-1]
+[display_node-4] [INFO] [1793615212.994612242] [display_node]: [任务报告] 任务完成；{"simulated": true, "team": "red", "pieces": [{"id": 1, "color": "red", "category": "车", "score": 9}, {"id": 2, "color": "red", "category": "马", "score": 5}, {"id": 3, "color": "red", "category": "兵", "score": 1}, {"id": 4, "color": "green", "category": "炮", "score": 6}, {"id": 5, "color": "green", "category": "卒", "score": 1}], "grab_queue": [{"id": 1, "color": "red", "category": "车", "score": 9, "priority": 1}, {"id": 2, "color": "red", "category": "马", "score": 5, "priority": 2}, {"id": 3, "color": "red", "category": "兵", "score": 1, "priority": 3}]}
+[display_node-4] [INFO] [1793615212.995272230] [display_node]: [任务状态] SAFE_STOP
+[INFO] [vision_simulator-3]: process has finished cleanly [pid 24128]
+[INFO] [motion_simulator-2]: process has finished cleanly [pid 24127]
+[INFO] [task_state-1]: process has finished cleanly [pid 24126]
+[INFO] [display_node-4]: process has finished cleanly [pid 24129]
+PASS: ROS2 状态、行驶进度、棋子排序及最终停车均已验证。

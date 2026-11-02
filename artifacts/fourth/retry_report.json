@@ -1,0 +1,77 @@
+{
+  "state": "COMPLETED",
+  "loaded": true,
+  "rule": "score_desc_id_asc",
+  "current": null,
+  "pending": [],
+  "completed": [
+    {
+      "id": "T1",
+      "category": "车",
+      "score": 9,
+      "x": 1.6,
+      "y": 0.3
+    },
+    {
+      "id": "T4",
+      "category": "炮",
+      "score": 6,
+      "x": 0.8,
+      "y": 1.1
+    },
+    {
+      "id": "T2",
+      "category": "马",
+      "score": 5,
+      "x": 1.2,
+      "y": 0.7
+    },
+    {
+      "id": "T3",
+      "category": "兵",
+      "score": 1,
+      "x": 0.5,
+      "y": 0.8
+    }
+  ],
+  "failed": [],
+  "cancelled": [],
+  "history": [
+    {
+      "target_id": "T1",
+      "command_id": "8dba22ff0a5b446395afa34082b9e23c:T1:1",
+      "attempt": 1,
+      "status": "success",
+      "detail": "模拟移动和抓取成功"
+    },
+    {
+      "target_id": "T4",
+      "command_id": "8dba22ff0a5b446395afa34082b9e23c:T4:1",
+      "attempt": 1,
+      "status": "success",
+      "detail": "模拟移动和抓取成功"
+    },
+    {
+      "target_id": "T2",
+      "command_id": "8dba22ff0a5b446395afa34082b9e23c:T2:1",
+      "attempt": 1,
+      "status": "failure",
+      "detail": "模拟抓取失败"
+    },
+    {
+      "target_id": "T2",
+      "command_id": "8dba22ff0a5b446395afa34082b9e23c:T2:2",
+      "attempt": 2,
+      "status": "success",
+      "detail": "模拟移动和抓取成功"
+    },
+    {
+      "target_id": "T3",
+      "command_id": "8dba22ff0a5b446395afa34082b9e23c:T3:1",
+      "attempt": 1,
+      "status": "success",
+      "detail": "模拟移动和抓取成功"
+    }
+  ],
+  "reason": "T3 成功，移除已完成目标；队列处理结束，进入等待"
+}

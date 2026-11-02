@@ -1,5 +1,19 @@
 # ROS 2 智能车任务流程仿真
 
+已新增第四次任务：**多目标选择、逐个执行、结果反馈、失败重试及超时/停止处理**。
+完整运行与验证说明见 [第四次任务说明](第四次任务说明.md)。
+
+```bash
+cd ~/下载/ros2_ws
+source /opt/ros/jazzy/setup.bash
+colcon build --packages-select car_task
+source install/setup.bash
+ros2 launch car_task fourth_task.launch.py
+```
+
+默认演示 4 个目标按分值执行，T2 首次失败后重试成功，最终进入 COMPLETED 等待。
+下方保留第三次任务说明，对应原入口 `car_task.launch.py`。
+
 ## 项目简介
 
 本项目用多个 ROS 2 节点模拟智能车接收任务、行驶到棋子区域、

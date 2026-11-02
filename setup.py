@@ -22,8 +22,13 @@ setup(
             os.path.join('share', package_name, 'launch'),
             glob('launch/*.launch.py')
         ),
+        (
+            os.path.join('share', package_name, 'config'),
+            glob('config/*.json')
+        ),
     ],
     install_requires=['setuptools'],
+    tests_require=['pytest'],
     zip_safe=True,
     maintainer='Micky_Mouce',
     maintainer_email='hellsee005@gmail.com',
@@ -39,6 +44,10 @@ setup(
             'motion_simulator = car_task.motion_simulator:main',
             'vision_simulator = car_task.vision_simulator:main',
             'display_node = car_task.display_node:main',
+            'target_input = car_task.target_input:main',
+            'target_manager = car_task.target_manager:main',
+            'target_executor = car_task.target_executor:main',
+            'target_display = car_task.target_display:main',
         ],
     },
 )

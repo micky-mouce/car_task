@@ -1,0 +1,50 @@
+{
+  "state": "STOPPED",
+  "loaded": true,
+  "rule": "score_desc_id_asc",
+  "current": null,
+  "pending": [
+    {
+      "id": "T4",
+      "category": "炮",
+      "score": 6,
+      "x": 0.8,
+      "y": 1.1
+    },
+    {
+      "id": "T2",
+      "category": "马",
+      "score": 5,
+      "x": 1.2,
+      "y": 0.7
+    },
+    {
+      "id": "T3",
+      "category": "兵",
+      "score": 1,
+      "x": 0.5,
+      "y": 0.8
+    }
+  ],
+  "completed": [],
+  "failed": [],
+  "cancelled": [
+    {
+      "id": "T1",
+      "category": "车",
+      "score": 9,
+      "x": 1.6,
+      "y": 0.3
+    }
+  ],
+  "history": [
+    {
+      "target_id": "T1",
+      "command_id": "a139d772d24b4a31ae1500df318635db:T1:1",
+      "attempt": 1,
+      "status": "cancelled",
+      "detail": "反馈超时：取消当前执行并停止整轮，防止执行状态不明时继续"
+    }
+  ],
+  "reason": "反馈超时：取消当前执行并停止整轮，防止执行状态不明时继续"
+}

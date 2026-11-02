@@ -1,0 +1,41 @@
+第四次任务 ROS2 部分本地验证
+日期：2026-11-02（Asia/Shanghai）
+环境：Ubuntu 24.04 / ROS2 Jazzy / Python 3.12.3
+
+一、构建与业务测试
+colcon build --packages-select car_task：通过。
+colcon test --packages-select car_task：30 passed，1 skipped。
+colcon test-result --verbose：31 tests，0 errors，0 failures，1 skipped。
+跳过项为工程原有版权检查；业务测试和 flake8、pep257 均通过。
+修正 setup.py 中缺失的 pytest 测试配置，colcon 已可发现并运行测试。
+python3 test/check_logic.py：4 项第三次任务独立逻辑检查通过。
+git diff --check：通过。
+
+二、真实 ROS2 通信验证
+命令：python3 test/check_fourth_ros.py
+使用独立 ROS_DOMAIN_ID 121—124；脚本等待话题订阅连接后发送一次启动。
+retry：下发 T1、T4、T2、T2、T3；T2 首次失败、重试成功；成功 4 个。
+skip：T2 两次失败后跳过；T1、T4、T3 成功；失败列表只有 T2。
+timeout：T1 无反馈，超时后取消并 STOPPED；其余 3 个保持待执行。
+stop：T1 执行中收到停止，取消动作并 STOPPED；无成功反馈，不再下发。
+额外检查：重复指令不会执行两次；错误目标编号、非对象反馈不推进队列；
+每个目标等待匹配结果后才派发下一目标；终态后观察 1 秒无重复报告或新指令。
+各场景日志、真实话题事件及最终报告见同目录 .log、.jsonl、_report.json。
+
+三、第三次任务回归
+ROS_DOMAIN_ID=126 python3 test/check_ros_flow.py：通过。
+仍按 IDLE、RUNNING、SCANNING、REPORTING、SAFE_STOP 完成。
+原入口 car_task.launch.py 保留，详见 third_task_regression.log。
+
+四、演示视频
+使用 python3 test/check_fourth_ros.py --demo --output artifacts/fourth/demo
+在独立 ROS 域 125 记录真实节点通信（未注入测试用的重复指令或错误反馈）。
+目标输入、串行执行、失败重试、最终空队列均核验通过。
+通过 tools/render_fourth_demo.py 将实际话题事件绘制成可视化回放。
+视频：第四次任务_ROS2演示.mp4；1280×720；10 fps；34.6 秒；346 帧。
+已完整解码 346 帧，并目视检查介绍页、运行面板、结果页。
+这是话题数据回放视频，非桌面操作录屏，无音轨；说明通过画面文字展示。
+demo/retry.jsonl 和 demo/retry_report.json 为该视频对应的真实数据。
+
+五、范围
+仅完成本次 ROS 与系统协同方向，不涉及真实电机、摄像头或外部提交。

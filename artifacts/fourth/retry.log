@@ -1,0 +1,169 @@
+[INFO] [launch]: All log files can be found below /home/micky/.ros/log/2026-11-02-19-03-02-457974-micky-Yilong15Pro-Series-GM5HG0A-43676
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [target_input-1]: process started with pid [43680]
+[INFO] [target_manager-2]: process started with pid [43681]
+[INFO] [target_executor-3]: process started with pid [43682]
+[INFO] [target_display-4]: process started with pid [43683]
+[target_input-1] [INFO] [1793617382.778077388] [target_input]: 输入 4 个目标：['T3', 'T2', 'T4', 'T1']（模拟数据）
+[target_display-4] [INFO] [1793617382.779202329] [target_display]: [IDLE] 当前=无 待执行=[] 成功=[] 跳过=[]；等待目标输入和启动指令
+[target_manager-2] [INFO] [1793617382.779323308] [target_manager]: 等待输入和启动；分值优先，同分按编号；一次执行一个
+[target_executor-3] [INFO] [1793617382.779866486] [target_executor]: 执行节点就绪，模拟移动及抓取，不连接真实硬件
+[target_display-4] [INFO] [1793617382.780540242] [target_display]: [IDLE] 当前=无 待执行=['T1(9分)', 'T4(6分)', 'T2(5分)', 'T3(1分)'] 成功=[] 跳过=[]；等待目标输入和启动指令
+[target_manager-2] [INFO] [1793617382.870244987] [target_manager]: 下发 T1，第 1 次执行
+[target_executor-3] [INFO] [1793617382.870795660] [target_executor]: 开始 T1，第 1 次执行
+[target_display-4] [INFO] [1793617382.870929393] [target_display]: [RUNNING] 当前=无 待执行=['T1(9分)', 'T4(6分)', 'T2(5分)', 'T3(1分)'] 成功=[] 跳过=[]；按分值降序执行；失败有限重试
+[target_manager-2] [WARN] [1793617382.871104224] [target_manager]: 忽略重复、迟到、错号或格式错误的反馈
+[target_executor-3] [WARN] [1793617382.871474726] [target_executor]: 忽略已处理的重复指令
+[target_manager-2] [WARN] [1793617382.871563333] [target_manager]: 忽略重复、迟到、错号或格式错误的反馈
+[target_display-4] [INFO] [1793617382.871664054] [target_display]: [RUNNING] 当前=T1 (第1次) 待执行=['T4(6分)', 'T2(5分)', 'T3(1分)'] 成功=[] 跳过=[]；按分值降序执行；失败有限重试
+[target_display-4] [INFO] [1793617382.972043380] [target_display]: T1 移动 0%
+[target_display-4] [INFO] [1793617383.071392419] [target_display]: T1 移动 20%
+[target_display-4] [INFO] [1793617383.171785424] [target_display]: T1 移动 40%
+[target_display-4] [INFO] [1793617383.271944697] [target_display]: T1 移动 60%
+[target_display-4] [INFO] [1793617383.370981536] [target_display]: T1 抓取 80%
+[target_manager-2] [INFO] [1793617383.470937514] [target_manager]: T1 成功，移除已完成目标
+[target_display-4] [INFO] [1793617383.471327322] [target_display]: T1 抓取 100%
+[target_display-4] [INFO] [1793617383.472028049] [target_display]: [RUNNING] 当前=无 待执行=['T4(6分)', 'T2(5分)', 'T3(1分)'] 成功=['T1'] 跳过=[]；T1 成功，移除已完成目标
+[target_manager-2] [INFO] [1793617383.570243292] [target_manager]: 下发 T4，第 1 次执行
+[target_executor-3] [INFO] [1793617383.571065498] [target_executor]: 开始 T4，第 1 次执行
+[target_display-4] [INFO] [1793617383.571984709] [target_display]: [RUNNING] 当前=T4 (第1次) 待执行=['T2(5分)', 'T3(1分)'] 成功=['T1'] 跳过=[]；T1 成功，移除已完成目标
+[target_display-4] [INFO] [1793617383.671454466] [target_display]: T4 移动 0%
+[target_display-4] [INFO] [1793617383.771109886] [target_display]: T4 移动 20%
+[target_display-4] [INFO] [1793617383.870924677] [target_display]: T4 移动 40%
+[target_display-4] [INFO] [1793617383.970993879] [target_display]: T4 移动 60%
+[target_display-4] [INFO] [1793617384.070692393] [target_display]: T4 抓取 80%
+[target_manager-2] [INFO] [1793617384.171236208] [target_manager]: T4 成功，移除已完成目标
+[target_display-4] [INFO] [1793617384.171786420] [target_display]: T4 抓取 100%
+[target_display-4] [INFO] [1793617384.172367781] [target_display]: [RUNNING] 当前=无 待执行=['T2(5分)', 'T3(1分)'] 成功=['T1', 'T4'] 跳过=[]；T4 成功，移除已完成目标
+[target_manager-2] [INFO] [1793617384.270859840] [target_manager]: 下发 T2，第 1 次执行
+[target_executor-3] [INFO] [1793617384.271132837] [target_executor]: 开始 T2，第 1 次执行
+[target_display-4] [INFO] [1793617384.272447927] [target_display]: [RUNNING] 当前=T2 (第1次) 待执行=['T3(1分)'] 成功=['T1', 'T4'] 跳过=[]；T4 成功，移除已完成目标
+[target_display-4] [INFO] [1793617384.371249594] [target_display]: T2 移动 0%
+[target_display-4] [INFO] [1793617384.471498961] [target_display]: T2 移动 20%
+[target_display-4] [INFO] [1793617384.571646085] [target_display]: T2 移动 40%
+[target_display-4] [INFO] [1793617384.671378093] [target_display]: T2 移动 60%
+[target_display-4] [INFO] [1793617384.771332952] [target_display]: T2 抓取 80%
+[target_manager-2] [INFO] [1793617384.871170801] [target_manager]: T2 失败，准备第 1 次重试
+[target_display-4] [INFO] [1793617384.871614741] [target_display]: T2 抓取 100%
+[target_display-4] [INFO] [1793617384.872197014] [target_display]: [RUNNING] 当前=无 待执行=['T2(5分)', 'T3(1分)'] 成功=['T1', 'T4'] 跳过=[]；T2 失败，准备第 1 次重试
+[target_manager-2] [INFO] [1793617384.970577212] [target_manager]: 下发 T2，第 2 次执行
+[target_executor-3] [INFO] [1793617384.971260095] [target_executor]: 开始 T2，第 2 次执行
+[target_display-4] [INFO] [1793617384.972049019] [target_display]: [RUNNING] 当前=T2 (第2次) 待执行=['T3(1分)'] 成功=['T1', 'T4'] 跳过=[]；T2 失败，准备第 1 次重试
+[target_display-4] [INFO] [1793617385.071832196] [target_display]: T2 移动 0%
+[target_display-4] [INFO] [1793617385.170931539] [target_display]: T2 移动 20%
+[target_display-4] [INFO] [1793617385.271266271] [target_display]: T2 移动 40%
+[target_display-4] [INFO] [1793617385.371469585] [target_display]: T2 移动 60%
+[target_display-4] [INFO] [1793617385.471452431] [target_display]: T2 抓取 80%
+[target_manager-2] [INFO] [1793617385.570550152] [target_manager]: T2 成功，移除已完成目标
+[target_display-4] [INFO] [1793617385.570951712] [target_display]: T2 抓取 100%
+[target_display-4] [INFO] [1793617385.571413376] [target_display]: [RUNNING] 当前=无 待执行=['T3(1分)'] 成功=['T1', 'T4', 'T2'] 跳过=[]；T2 成功，移除已完成目标
+[target_executor-3] [INFO] [1793617385.670534671] [target_executor]: 开始 T3，第 1 次执行
+[target_manager-2] [INFO] [1793617385.670763454] [target_manager]: 下发 T3，第 1 次执行
+[target_display-4] [INFO] [1793617385.672114462] [target_display]: [RUNNING] 当前=T3 (第1次) 待执行=[] 成功=['T1', 'T4', 'T2'] 跳过=[]；T2 成功，移除已完成目标
+[target_display-4] [INFO] [1793617385.771513984] [target_display]: T3 移动 0%
+[target_display-4] [INFO] [1793617385.871856562] [target_display]: T3 移动 20%
+[target_display-4] [INFO] [1793617385.971468556] [target_display]: T3 移动 40%
+[target_display-4] [INFO] [1793617386.071300078] [target_display]: T3 移动 60%
+[target_display-4] [INFO] [1793617386.171302585] [target_display]: T3 抓取 80%
+[target_manager-2] [INFO] [1793617386.271134119] [target_manager]: T3 成功，移除已完成目标；队列处理结束，进入等待
+[target_display-4] [INFO] [1793617386.271476978] [target_display]: T3 抓取 100%
+[target_manager-2] [INFO] [1793617386.271578781] [target_manager]: 本轮结束，已发布最终报告；重新演示请重启 launch
+[target_display-4] [INFO] [1793617386.272287733] [target_display]: [COMPLETED] 当前=无 待执行=[] 成功=['T1', 'T4', 'T2', 'T3'] 跳过=[]；T3 成功，移除已完成目标；队列处理结束，进入等待
+[target_display-4] [INFO] [1793617386.272622848] [target_display]: [最终报告] {"state": "COMPLETED", "loaded": true, "rule": "score_desc_id_asc", "current": null, "pending": [], "completed": [{"id": "T1", "category": "车", "score": 9, "x": 1.6, "y": 0.3}, {"id": "T4", "category": "炮", "score": 6, "x": 0.8, "y": 1.1}, {"id": "T2", "category": "马", "score": 5, "x": 1.2, "y": 0.7}, {"id": "T3", "category": "兵", "score": 1, "x": 0.5, "y": 0.8}], "failed": [], "cancelled": [], "history": [{"target_id": "T1", "command_id": "8dba22ff0a5b446395afa34082b9e23c:T1:1", "attempt": 1, "status": "success", "detail": "模拟移动和抓取成功"}, {"target_id": "T4", "command_id": "8dba22ff0a5b446395afa34082b9e23c:T4:1", "attempt": 1, "status": "success", "detail": "模拟移动和抓取成功"}, {"target_id": "T2", "command_id": "8dba22ff0a5b446395afa34082b9e23c:T2:1", "attempt": 1, "status": "failure", "detail": "模拟抓取失败"}, {"target_id": "T2", "command_id": "8dba22ff0a5b446395afa34082b9e23c:T2:2", "attempt": 2, "status": "success", "detail": "模拟移动和抓取成功"}, {"target_id": "T3", "command_id": "8dba22ff0a5b446395afa34082b9e23c:T3:1", "attempt": 1, "status": "success", "detail": "模拟移动和抓取成功"}], "reason": "T3 成功，移除已完成目标；队列处理结束，进入等待"}
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[ERROR] [target_display-4]: process[target_display-4] failed to terminate '5' seconds after receiving 'SIGINT', escalating to 'SIGTERM'
+[ERROR] [target_executor-3]: process[target_executor-3] failed to terminate '5' seconds after receiving 'SIGINT', escalating to 'SIGTERM'
+[ERROR] [target_manager-2]: process[target_manager-2] failed to terminate '5' seconds after receiving 'SIGINT', escalating to 'SIGTERM'
+[ERROR] [target_input-1]: process[target_input-1] failed to terminate '5' seconds after receiving 'SIGINT', escalating to 'SIGTERM'
+[INFO] [target_display-4]: sending signal 'SIGTERM' to process[target_display-4]
+[INFO] [target_executor-3]: sending signal 'SIGTERM' to process[target_executor-3]
+[INFO] [target_manager-2]: sending signal 'SIGTERM' to process[target_manager-2]
+[INFO] [target_input-1]: sending signal 'SIGTERM' to process[target_input-1]
+[target_executor-3] Traceback (most recent call last):
+[target_executor-3]   File "/home/micky/下载/ros2_ws/install/car_task/lib/car_task/target_executor", line 33, in <module>
+[target_executor-3]     sys.exit(load_entry_point('car-task==0.1.0', 'console_scripts', 'target_executor')())
+[target_executor-3]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[target_executor-3]   File "/home/micky/下载/ros2_ws/install/car_task/lib/python3.12/site-packages/car_task/target_executor.py", line 114, in main
+[target_executor-3]     run_node(TargetExecutorNode, args)
+[target_executor-3]   File "/home/micky/下载/ros2_ws/install/car_task/lib/python3.12/site-packages/car_task/runtime.py", line 13, in run_node
+[target_executor-3]     rclpy.spin(node)
+[target_display-4] Traceback (most recent call last):
+[target_display-4]   File "/home/micky/下载/ros2_ws/install/car_task/lib/car_task/target_display", line 33, in <module>
+[target_display-4]     sys.exit(load_entry_point('car-task==0.1.0', 'console_scripts', 'target_display')())
+[target_display-4]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[target_display-4]   File "/home/micky/下载/ros2_ws/install/car_task/lib/python3.12/site-packages/car_task/target_display.py", line 53, in main
+[target_display-4]     run_node(TargetDisplayNode, args)
+[target_display-4]   File "/home/micky/下载/ros2_ws/install/car_task/lib/python3.12/site-packages/car_task/runtime.py", line 13, in run_node
+[target_display-4]     rclpy.spin(node)
+[target_display-4]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+[target_executor-3]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+[target_executor-3]     executor.spin_once()
+[target_executor-3]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+[target_executor-3]     self._spin_once_impl(timeout_sec)
+[target_executor-3]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+[target_executor-3]     handler, entity, node = self.wait_for_ready_callbacks(
+[target_executor-3]                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[target_executor-3]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+[target_executor-3]     return next(self._cb_iter)
+[target_executor-3]            ^^^^^^^^^^^^^^^^^^^
+[target_executor-3]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 785, in _wait_for_ready_callbacks
+[target_executor-3]     raise ExternalShutdownException()
+[target_executor-3] rclpy.executors.ExternalShutdownException
+[target_display-4]     executor.spin_once()
+[target_display-4]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+[target_display-4]     self._spin_once_impl(timeout_sec)
+[target_display-4]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+[target_display-4]     handler, entity, node = self.wait_for_ready_callbacks(
+[target_display-4]                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[target_display-4]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+[target_display-4]     return next(self._cb_iter)
+[target_display-4]            ^^^^^^^^^^^^^^^^^^^
+[target_display-4]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 785, in _wait_for_ready_callbacks
+[target_display-4]     raise ExternalShutdownException()
+[target_display-4] rclpy.executors.ExternalShutdownException
+[target_manager-2] Traceback (most recent call last):
+[target_manager-2]   File "/home/micky/下载/ros2_ws/install/car_task/lib/car_task/target_manager", line 33, in <module>
+[target_manager-2]     sys.exit(load_entry_point('car-task==0.1.0', 'console_scripts', 'target_manager')())
+[target_manager-2]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[target_manager-2]   File "/home/micky/下载/ros2_ws/install/car_task/lib/python3.12/site-packages/car_task/target_manager.py", line 127, in main
+[target_manager-2]     run_node(TargetManagerNode, args)
+[target_manager-2]   File "/home/micky/下载/ros2_ws/install/car_task/lib/python3.12/site-packages/car_task/runtime.py", line 13, in run_node
+[target_manager-2]     rclpy.spin(node)
+[target_manager-2]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+[target_manager-2]     executor.spin_once()
+[target_manager-2]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+[target_manager-2]     self._spin_once_impl(timeout_sec)
+[target_manager-2]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+[target_manager-2]     handler, entity, node = self.wait_for_ready_callbacks(
+[target_manager-2]                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[target_manager-2]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+[target_manager-2]     return next(self._cb_iter)
+[target_manager-2]            ^^^^^^^^^^^^^^^^^^^
+[target_manager-2]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 785, in _wait_for_ready_callbacks
+[target_manager-2]     raise ExternalShutdownException()
+[target_manager-2] rclpy.executors.ExternalShutdownException
+[target_input-1] Traceback (most recent call last):
+[target_input-1]   File "/home/micky/下载/ros2_ws/install/car_task/lib/car_task/target_input", line 33, in <module>
+[target_input-1]     sys.exit(load_entry_point('car-task==0.1.0', 'console_scripts', 'target_input')())
+[target_input-1]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[target_input-1]   File "/home/micky/下载/ros2_ws/install/car_task/lib/python3.12/site-packages/car_task/target_input.py", line 30, in main
+[target_input-1]     run_node(TargetInputNode, args)
+[target_input-1]   File "/home/micky/下载/ros2_ws/install/car_task/lib/python3.12/site-packages/car_task/runtime.py", line 13, in run_node
+[target_input-1]     rclpy.spin(node)
+[target_input-1]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+[target_input-1]     executor.spin_once()
+[target_input-1]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+[target_input-1]     self._spin_once_impl(timeout_sec)
+[target_input-1]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+[target_input-1]     handler, entity, node = self.wait_for_ready_callbacks(
+[target_input-1]                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[target_input-1]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+[target_input-1]     return next(self._cb_iter)
+[target_input-1]            ^^^^^^^^^^^^^^^^^^^
+[target_input-1]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 785, in _wait_for_ready_callbacks
+[target_input-1]     raise ExternalShutdownException()
+[target_input-1] rclpy.executors.ExternalShutdownException
+[ERROR] [target_display-4]: process has died [pid 43683, exit code 1, cmd '/home/micky/下载/ros2_ws/install/car_task/lib/car_task/target_display --ros-args'].
+[ERROR] [target_executor-3]: process has died [pid 43682, exit code 1, cmd '/home/micky/下载/ros2_ws/install/car_task/lib/car_task/target_executor --ros-args --params-file /tmp/launch_params_x94kzbq1'].
+[ERROR] [target_input-1]: process has died [pid 43680, exit code 1, cmd '/home/micky/下载/ros2_ws/install/car_task/lib/car_task/target_input --ros-args --params-file /tmp/launch_params_7vxzeqg1'].
+[ERROR] [target_manager-2]: process has died [pid 43681, exit code 1, cmd '/home/micky/下载/ros2_ws/install/car_task/lib/car_task/target_manager --ros-args --params-file /tmp/launch_params_n4cpnhzr'].
